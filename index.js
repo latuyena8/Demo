@@ -37,7 +37,7 @@ app.use(sessionMiddlewares)
 app.get('/', authMiddlewares.requireAuth, countCartMiddlewares,
     function(request, response, next) {
         response.render('index', {
-            name: 'AAA',
+            name: response.locals.users,
             sumCart: response.locals.sumCart
         })
     })

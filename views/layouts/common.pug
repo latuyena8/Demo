@@ -4,7 +4,7 @@ html
         link(rel='stylesheet',href='/styles/custom.css')    
     body
         nav.navbar.navbar-expand-lg.navbar-light.bg-light
-            a.navbar-brand(href='#') CoderX
+            a.navbar-brand(href='#') Demo
             button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
                 span.navbar-toggler-icon
             #navbarNav.collapse.navbar-collapse
@@ -13,11 +13,12 @@ html
                     a.nav-link(href='/') Home
                 li.nav-item
                     a.nav-link(href='/users') Users
-                li.nav-item
-                    a.nav-link(href='/product') Products
-                li.nav-item
-                    span.badge.badge-primary.badge-pill #{sumCart}
-                    a.nav-link(href='/cart') Cart
+                li.nav-item(style='display: flex;')
+                    a.nav-link(href='/product') Products 
+                    span.badge.badge-primary.badge-pill(style='height: 50%;') #{sumCart}
+                //- li.nav-item
+                //-     span.badge.badge-primary.badge-pill #{sumCart}
+                //-     a.nav-link(href='/cart') Cart
             if (user)
                 p= user.name
         .container.pt-5

@@ -20,7 +20,6 @@ module.exports.viewUsers = function(req, res) {
     })
 }
 module.exports.search = function(resquest, response) {
-
     console.log(resquest.query)
     var q = resquest.query.q
     var matchedUsers = db.get('users').value().filter(function(user) {

@@ -33,6 +33,7 @@ module.exports.index = function (req, res) {
         page: [page-1,page,page+1,theStart,theEnd]
                 // product: db.get('product').value().slice(start,end)
     })
+    res.locals.page = parseInt(req.query.page)
 }
 
 
