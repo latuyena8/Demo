@@ -1,0 +1,51 @@
+extends ../layouts/common.pug
+block content
+    
+    //- form(action='/product/search' method='POST')  
+    //-     .form-inline
+    //-         input.form-control.mr-sm-2(type="text",name='name')            
+    //-         button.btn.btn-primary.my-sm-0 Search
+
+    nav.navbar.navbar-light
+        h1 Product
+        form.form-inline(action='/product/search' method='GET')
+            input.form-control.mr-sm-2(type='search', placeholder='search..', aria-label='Search', name='name')
+            button.btn.btn-primary.my-2.my-sm-0 Search
+
+    .cardBox.row
+        each val,index in product 
+            .col-4.float-left.mb-3
+                .card
+                    img.card-img-top(src=val.image, alt='Card image cap')
+                    .card-body(style='height:11rem')
+                        h5.card-title #{val.name}
+                        p.card-text #{val.description}
+                    a.btn.btn-primary.mb-3(href='/cart/add/'+val.id, style='width:10rem;align-self:center') Add to cart
+
+    nav.mb-2(aria-label='Page navigation example')
+        ul.pagination(style="flex-direction: row;justify-content: flex-end;")
+            if page[3]==true
+                li.page-item
+                a.page-link(href='/product?page='+ page[0], aria-label='Previous')
+                    span(aria-hidden='true') &laquo;
+                    span.sr-only Previous
+            if page[1]!==1
+                li.page-item
+                a.page-link(href='/product?page='+ page[0]) #{page[0]}
+
+            li.page-item
+            a.page-link(href='#',style='background-color:#0062cc;color:white') #{page[1]}
+            
+            if page[4]==true
+                li.page-item
+                a.page-link(href='/product?page='+ page[2]) #{page[2]}
+
+            if page[4]==true
+                li.page-item
+                a.page-link(href='/product?page='+ page[2], aria-label='Next')
+                    span(aria-hidden='true') &raquo;
+                    span.sr-only Next
+
+              
+
+        

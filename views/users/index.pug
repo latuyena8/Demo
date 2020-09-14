@@ -1,0 +1,40 @@
+extends ../layouts/common.pug
+block content
+    h1.row Users: 
+
+    a.row(href='/users/create') New
+
+
+    form(action='/users/search' method='GET')
+        .row
+            input.form-control.col-6.col-md-6(type='text',name='q')
+            span &nbsp
+            button.btn.btn-primary Search
+
+    //- ul
+    //-     each val in users
+    //-         li
+    //-             span= val.name
+    //-             span &nbsp
+    //-             a(href='/users/view/'+ val.id) View
+    
+
+    .row
+        table.table.col-5.col-md-5
+            thead
+                tr
+                    th(scope='col') Avatar
+                    th(scope='col') Name
+                    th(scope='col') Phone
+                    th(scope='col') Detail
+                tbody
+                    each val in users                
+                        tr
+                            td
+                                img(src=val.avatar,width="60",height="60")
+                            th  #{val.name}
+                            td  #{val.phone}
+                            td
+                                a(href='/users/view/'+ val.id)
+                                    div(style='height:100%;width:100%') View
+                            
