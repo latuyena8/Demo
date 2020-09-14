@@ -15,9 +15,9 @@ html
                     a.nav-link(href='/users') Users
                 li.nav-item
                     a.nav-link(href='/product') Products
-                //- li.nav-item
-                //-     span.badge.badge-primary.badge-pill #{sumCart}
-                //-     a.nav-link(href='/cart') Cart
+                li.nav-item
+                    span.badge.badge-primary.badge-pill #{sumCart}
+                    a.nav-link(href='/cart') Cart
             if (user)
                 p= user.name
         .container.pt-5
