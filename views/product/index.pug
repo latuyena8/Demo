@@ -22,29 +22,29 @@ block content
                         p.card-text #{val.description}
                     a.btn.btn-primary.mb-3(href='/cart/add/'+val.id, style='width:10rem;align-self:center') Add to cart
 
-    nav.mb-2(aria-label='Page navigation example')
-        ul.pagination(style="flex-direction: row;justify-content: flex-end;")
-            if page[3]==true
-                li.page-item
-                a.page-link(href='/product?page='+ page[0], aria-label='Previous')
-                    span(aria-hidden='true') &laquo;
-                    span.sr-only Previous
-            if page[1]!==1
-                li.page-item
-                a.page-link(href='/product?page='+ page[0]) #{page[0]}
+    //- nav.mb-2(aria-label='Page navigation example')
+    //-     ul.pagination(style="flex-direction: row;justify-content: flex-end;")
+    //-         if page[3]==true
+    //-             li.page-item
+    //-             a.page-link(href='/product?page='+ page[0], aria-label='Previous')
+    //-                 span(aria-hidden='true') &laquo;
+    //-                 span.sr-only Previous
+    //-         if page[1]!==1
+    //-             li.page-item
+    //-             a.page-link(href='/product?page='+ page[0]) #{page[0]}
 
-            li.page-item
-            a.page-link(href='#',style='background-color:#0062cc;color:white') #{page[1]}
+    //-         li.page-item
+    //-         a.page-link(href='#',style='background-color:#0062cc;color:white') #{page[1]}
             
-            if page[4]==true
-                li.page-item
-                a.page-link(href='/product?page='+ page[2]) #{page[2]}
+    //-         if page[4]==true
+    //-             li.page-item
+    //-             a.page-link(href='/product?page='+ page[2]) #{page[2]}
 
-            if page[4]==true
-                li.page-item
-                a.page-link(href='/product?page='+ page[2], aria-label='Next')
-                    span(aria-hidden='true') &raquo;
-                    span.sr-only Next
+    //-         if page[4]==true
+    //-             li.page-item
+    //-             a.page-link(href='/product?page='+ page[2], aria-label='Next')
+    //-                 span(aria-hidden='true') &raquo;
+    //-                 span.sr-only Next
 
               
 
