@@ -1,11 +1,14 @@
 {
   "name": "expressjs-coderx",
   "version": "1.0.0",
+  "homepage": "https://latuyena8.github.io/Demo/",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --inspect index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +19,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "gh-pages": "^3.1.0",
     "lowdb": "^1.0.0",
     "md5": "^2.3.0",
     "mongodb": "^3.6.0",
@@ -26,5 +30,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
 }
